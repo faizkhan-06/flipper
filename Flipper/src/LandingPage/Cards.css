@@ -1,0 +1,10 @@
+.blur__text {
+    top: 320px;
+    backdrop-filter: blur(10px);
+    transition: 200ms;
+}
+
+
+.img__card:hover .blur__text {
+    top: 0px;
+}
