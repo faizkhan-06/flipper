@@ -1,11 +1,7 @@
 import Cards from "./Cards";
-interface MyDataType {
-  id: number;
-  title: string;
-  img: string;
-}
+
 function HomePage() {
-  const cardArray: MyDataType[] = [
+  const cardArray = [
     {
       id: 1,
       title: "Video",
