@@ -1,6 +1,11 @@
 import Cards from "./Cards";
-
+import { useState } from "react";
 function HomePage() {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (e) => {
+    setPosition({ x: e.clientX - 30, y: e.clientY - 30 });
+  };
   const cardArray = [
     {
       id: 1,
@@ -14,7 +19,14 @@ function HomePage() {
     },
   ];
   return (
-    <div className="bg-black h-screen flex-center ">
+    <div
+      className="bg-black h-screen w-screen flex-center relative overflow-hidden"
+      onMouseMove={handleMouseMove}
+    >
+      <div
+        className={`h-20 w-20 bg-red-500 absolute rounded-full blur-md`}
+        style={{ left: `${position.x}px`, top: `${position.y}px` }}
+      ></div>
       <Cards data={cardArray} />
     </div>
   );

@@ -8,3 +8,27 @@
 .img__card:hover .blur__text {
     top: 0px;
 }
+
+.card__wrapper {
+    @apply relative bg-gradient-to-b from-slate-600 to-slate-900 rounded-2xl
+}
+
+.card__wrapper::before {
+    animation: spin 4s linear infinite;
+    background: rgb(57, 255, 57);
+    background: linear-gradient(0deg, rgba(57, 255, 57, 1) 0%, rgba(60, 255, 200, 1) 25%, rgba(105, 55, 255, 1) 50%, rgba(255, 48, 212, 1) 75%, rgba(255, 41, 64, 1) 100%);
+    @apply absolute w-[150%] h-[50%] content-['']
+}
+
+
+@keyframes spin {
+    from {
+        transform: rotate(45deg);
+        /* Start at 0 degrees rotation */
+    }
+
+    to {
+        transform: rotate(405deg);
+        /* Rotate to 360 degrees */
+    }
+}
